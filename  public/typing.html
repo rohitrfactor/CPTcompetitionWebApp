@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Typing Page</title>
+  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="flipclock.css">
+	<script src="jquery.min.js"></script>
+	<script src="d3.v3.min.js" language="JavaScript"></script>
+	<script src="flipclock.js"></script>
+	<script src="Diff/diff.js"></script>
+
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+
+	<script src="bootstrap.min.js"></script>
+
+
+		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script src="liquidFillGauge.js" language="JavaScript"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+				.passage:hover
+				{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+				}
+				.passage{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					border-radius: 7px;
+					padding: 5px;
+					text-align: justify;
+					margin: 10px;
+ 					font-size:25px;
+					height: 115px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.practiceButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+				.practiceButton{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+					text-decoration: none;
+				}
+				.submitTestButton {
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					margin:30px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+				}
+
+				.submitTestButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+
+
+				.showhideButton
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					margin-top:30px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+				}
+
+				.showhideButton:hover
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					background-color: #00BFA5;
+					padding: 5px;
+				}
+
+				.starttypingtext
+				{
+			    font-family: 'Nunito', sans-serif;
+    			color: #000;
+					margin-top: 17px;
+    			font-size: 25px;
+    			display: inline-block;
+    			height: 100%;
+    			vertical-align: middle;
+				}
+				.submitTestButton:disabled{
+					font-family: 'Nunito', sans-serif;
+					color: #F44336;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #F44336;
+					background-color: Transparent;
+					padding: 5px;
+				}
+			  #user_email{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					font-size: 25px;
+					padding: 15px;
+					display: inline-block;
+    			height: 100%;
+    			vertical-align: middle;
+				}
+				#signout{
+					float: right;
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					border:1px solid;
+					margin:10px;
+					font-size: 25px;
+					border-color: #FFF;
+					padding: 5px;
+					background-color: Transparent;
+				}
+
+				#signout:hover {
+					cursor: pointer;
+					color: #00BFA5;
+					background-color: #FFF;
+				}
+
+		    .loader {
+				  border: 16px solid #f3f3f3;
+				  border-radius: 50%;
+				  border-top: 16px solid #00BFA5;
+				  width: 100px;
+				  height: 100px;
+					margin: 0 auto;
+					margin-top: 200px;
+				  -webkit-animation: spin 2s linear infinite;
+				  animation: spin 2s linear infinite;
+				}
+				#typing{
+					height:200px;
+				}
+        #original{
+          font-family: "Times New Roman", Georgia,serif;
+        }
+
+				#schedule a
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #000;
+					font-size: 25px;
+					padding: 15px;
+					height: auto;
+					text-align: center;
+				}
+
+				#schedule a:hover
+				{
+					text-decoration: none;
+					color: #00BFA5;
+					cursor: pointer;
+				}
+
+
+				#inst a,#ins a
+				{
+					font-family: 'Nunito', sans-serif;
+					color:#00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					height: auto;
+					text-decoration: none;
+					padding: 8px;
+					padding-left: 34px;
+					padding-right: 36px;
+				}
+
+				#inst a:hover, #ins a:hover
+				{
+					color: #FFF;
+					text-decoration: none;
+					background-color: #00BFA5;
+					cursor: pointer;
+				}
+
+				#softwarelink
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #000;
+					font-size: 25px;
+					padding: 15px;
+					height: auto;
+					text-align: center;
+				}
+				#softwarelink:hover
+				{
+					color: #00BFA5;
+					text-decoration: none;
+					cursor: pointer;
+				}
+				#previousButton
+				{
+					font-family: 'Nunito', sans-serif;
+    			border: 1px solid;
+    			margin: 10px;
+    			font-size: 25px;
+    			border-color: #FFF;
+    			padding: 10px;
+				}
+				.previousPageText
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border: 1px solid;
+					margin: 10px;
+					font-size: 25px;
+					padding: 10px;
+					background-color: Transparent;
+				}
+				.previousPageText:hover
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					cursor: pointer;
+					background-color: #00BFA5;
+				}
+
+
+				@-webkit-keyframes spin {
+				  0% { -webkit-transform: rotate(0deg); }
+				  100% { -webkit-transform: rotate(360deg); }
+				}
+
+				@keyframes spin {
+				  0% { transform: rotate(0deg); }
+				  100% { transform: rotate(360deg); }
+				}
+    </style>
+
+<body>
+
+  <div class="container" style="background-color:#00BFA5;font-family: 'Nunito', sans-serif;width:100%; margin:autoStart">
+	    <div class="row">
+		        <span id="user_email"></span>
+	          <button type="button" id="signout">Log Out</button> <br>
+	    </div>
+	</div>
+
+<marquee style="color:red;font-size:35px">You can submit your responses between 9:00 P.M. to 10:00 P.M. only. </marquee>
+
+        <div id="practice" style="width:100%" >
+        		  <div id="practice_data">
+                  	        <div id="previousButton">
+                                  <a href="main.html">
+                                      <span class="previousPageText">Go to Previous Page</span>
+                                  </a>
+                            </div>
+                  					<div class="row" style="max-width:100%">
+                  							<div class="col-md-12 starttypingtext">
+                  					     		<center>You can download and take print out of your test from
+                                        <a href="https://goo.gl/NMz5p8" target="_blank">
+                                           from here
+                                         </a><br>
+                                         OR <br>
+                                         you can click on Show/Hide Passage to show test
+                                   </center>
+                  					  	</div>
+                  					</div>
+
+                  					<div style="margin:20px">
+                  							<div class="clock" style="margin:2em; display:table;width:0;margin:0 auto"></div>
+                  					</div>
+                            <div class="row" style="padding-bottom:26px;max-width:100%">
+                                  	<div class="col-md-4">
+                                       <center><button class="showhideButton" id="showhide">Show/Hide Passage</button> </center>
+                                    </div>
+                                    <div class="col-md-4">
+                                          <center><span class="starttypingtext">
+                                            Start Typing below ...</span>
+                                          </center>
+                                    </div>
+                                  	<div class="col-md-4">
+                                  					<center><button class="submitTestButton" id="submitTest" onclick="view.endTest()" disabled="true">
+                                              Finish</button>
+                                            </center>
+                                    </div>
+                            </div>
+                            <table style="padding:10px">
+                            					<tbody>
+                                          <tr>
+                                							<td id="original">The Congress victory in Punjab, bagging 77 of the 117 seats in the Assembly elections, comes as a salve for the beleaguered party. This is its first victory in a big State since Karnataka 2013, and it took a particularly feisty campaign led by Amarinder Singh. The party had to fend off not just the ruling Shiromani Akali Dal-Bharatiya Janata Party alliance but also the challenge posed by the Aam Aadmi Party, which had made a significant foray in the State in the 2014 Lok Sabha election. The results suggest a strong anti-incumbency sentiment against the SAD-BJP coalition. In its decade-long stint in power, it may have helped build the State infrastructure. But during its second term, public distaste grew over the consolidation of power in the Badal family, and there were reports of corruption and high-handedness. The Congress managed to convert this disenchantment into support for itself, building a campaign around the leadership of Captain Singh and the promise of effective administration. The AAP, with its focus on rural areas, especially in the south-central Malwa region following its surprise success in 2014, made a play for the anti-Akali vote. But infighting and the absence of a grassroots presence or a clear State leader tested its organisation. In the end, the AAP was unable to substantially increase the vote share of around 24% that it had gained in 2014: a great chunk of the Akali-BJP vote went to the Congress.
+The challenges the Congress administration faces are formidable. It must address the agrarian crisis as well as high unemployment in the State. Punjab leads the country in youth unemployment rate, and its urban centres need renewal. The drug problem continues to ravage rural Punjab, devastating families and nourishing a trafficking nexus. The high debt-to-GDP ratio (31.4% in 2015-16 against the national average of 22%) puts further constraints on the State administration. The Congress has no option but to deliver, as its performance in Punjab is the key to its revival in northern and western India where the BJP has won most Assembly elections over the past five years. Success here should also nudge the party to groom regional leaders elsewhere instead of being dependent on its high command, and more specifically, its vice-president, Rahul Gandhi. For the AAP, the presence of 20 members in the new legislature allows it an opportunity to develop a grassroots presence.
+</td>
+                                							<td contenteditable="true" id="typing" spellcheck="false"></td>
+                            					    </tr>
+                            					</tbody>
+                            </table>
+              </div>
+        </div>
+        <div id="output">
+        		<div style="margin-top:20px">
+            			<svg id="accuracy" width="25%" height="250" style="float:left"></svg>
+            			<svg id="error" width="25%" height="250" style="float:left"></svg>
+            			<svg id="depressions" width="25%" height="250" style="float:left"></svg>
+            			<svg id="speed" width="25%" height="250" style="float:left"></svg>
+        		</div>
+        		<div style="margin-top:10px;font-family: 'Nunito', sans-serif;font-size:30px">
+            			<span style="float:left;width:25%;text-align:center">Accuracy</span>
+            			<span style="float:left;width:25%;text-align:center">Error</span>
+            			<span style="float:left;width:25%;text-align:center">Actual Depressions</span>
+            			<span style="float:left;width:25%;text-align:center">Speed <br>(Calculated Depressions)</span>
+        		</div>
+            <div id="rank" style="font-size:80px;margin:0 auto">
+                  Rank is
+            </div>
+            <table>
+                    <tbody>
+                            <tr style="width:100%">
+                                  <td style="width:100%">
+                                      <pre id="result" style="width:100%;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;white-space:-pre-wrap;word-wrap: break-word;">
+                                        <del></del><ins></ins>
+                                      </pre>
+                                  </td>
+                           </tr>
+                    </tbody>
+            </table>
+        		<center>
+                <a href="main.html">
+        			     <span class="practiceButton">
+                     Next Test
+                   </span>
+                </a>
+        		</center>
+        </div>
+</body>
+<script>
+
+			$(document).ready(function(){
+			    $("button#showhide").click(function(){
+			    $("td#original").toggle();
+			    });
+			});
+
+
+
+</script>
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="typing.js"></script>

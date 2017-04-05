@@ -1,0 +1,331 @@
+<html>
+<head>
+
+	<title>Main Page</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+
+	<link href="style.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+				.passage:hover
+				{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+				}
+				.passage{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					border-radius: 7px;
+					padding: 5px;
+					text-align: justify;
+					margin: 10px;
+ 					font-size:25px;
+					height: 115px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+	/*			.practiceButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+				.practiceButton{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+					text-decoration: none;
+				}
+				.submitTestButton {
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					margin:30px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+				}
+
+				.submitTestButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+
+
+				.starttypingtext
+				{
+			    font-family: 'Nunito', sans-serif;
+    			color: #000;
+					margin-top: 17px;
+    			font-size: 25px;
+    			display: inline-block;
+    			height: 100%;
+    			vertical-align: middle;
+				}
+				.submitTestButton:disabled{
+					font-family: 'Nunito', sans-serif;
+					color: #F44336;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #F44336;
+					background-color: Transparent;
+					padding: 5px;
+				}*/
+
+				.button
+				{
+					font-family: 'Nunito', sans-serif;
+					border: 1px solid;
+					font-size: 25px;
+					border-color: #FFF;
+					padding: 10px;
+				}
+				.buttonText
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border: 1px solid;
+					margin: 10px;
+					font-size: 25px;
+					padding: 10px;
+					background-color: Transparent;
+				}
+				.buttonText:hover
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					cursor: pointer;
+					background-color: #00BFA5;
+				}
+
+			  #user_email{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					font-size: 25px;
+					padding: 15px;
+					display: inline-block;
+    			vertical-align: middle;
+				}
+				#signout{
+					float: right;
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					border:1px solid;
+					margin:10px;
+					font-size: 25px;
+					border-color: #FFF;
+					padding: 5px;
+					background-color: Transparent;
+				}
+
+				#signout:hover {
+					cursor: pointer;
+					color: #00BFA5;
+					background-color: #FFF;
+				}
+
+		    .loader {
+				  border: 16px solid #f3f3f3;
+				  border-radius: 50%;
+				  border-top: 16px solid #00BFA5;
+				  width: 100px;
+				  height: 100px;
+					margin: 0 auto;
+					margin-top: 200px;
+				  -webkit-animation: spin 2s linear infinite;
+				  animation: spin 2s linear infinite;
+				}
+
+			/*	#schedule a
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #000;
+					font-size: 25px;
+					padding: 15px;
+					height: auto;
+					text-align: center;
+				}
+
+				#schedule a:hover
+				{
+					text-decoration: none;
+					color: #00BFA5;
+					cursor: pointer;
+				}
+
+
+				#inst a,#ins a
+				{
+					font-family: 'Nunito', sans-serif;
+					color:#00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					height: auto;
+					text-decoration: none;
+					padding: 8px;
+					padding-left: 34px;
+					padding-right: 36px;
+				}
+*/
+
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+
+.row
+{
+	max-width: 100%;
+}
+.mtop20
+{
+	margin-top: 20px;
+}
+
+
+.typing:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #00BFA5;
+    cursor: pointer;
+}
+
+.typing {
+    font-family: 'Nunito', sans-serif;
+    color: #00BFA5;
+    border: 1px solid;
+    font-size: 25px;
+    height: auto;
+    text-decoration: none;
+    padding: 8px;
+    padding-left: 34px;
+    padding-right: 36px;
+}
+
+.square
+{
+	    font-family: 'Nunito', sans-serif;
+	    color: #00BFA5;
+	    margin: 52px;
+	    border: 1px solid;
+	    font-size: 25px;
+			line-height: 64px;
+	    height: 230px;
+	    text-decoration: none;
+	    padding: 22px;
+	    padding-left: 34px;
+	    padding-right: 36px;
+			border-radius: 10px;
+			font-size: 32px !important;
+}
+.square a {
+	color: #00BFA5 !important;
+	border: 1px solid;
+	padding-left: 6%;
+  padding-right: 6%;
+}
+.square a:hover{
+	color: #FFF !important;
+	background-color: #00BFA5;
+}
+/*.square:hover
+{
+  color: #FFF;
+	background-color: #00BFA5;
+}*/
+.square:hover a
+{
+	/*color: #FFF !important;*/
+}
+
+
+				@-webkit-keyframes spin {
+				  0% { -webkit-transform: rotate(0deg); }
+				  100% { -webkit-transform: rotate(360deg); }
+				}
+
+				@keyframes spin {
+				  0% { transform: rotate(0deg); }
+				  100% { transform: rotate(360deg); }
+				}
+    </style>
+</head>
+<body>
+
+	<div class="container" style="background-color:#00BFA5;font-family: 'Nunito', sans-serif;width:100%; margin:autoStart">
+	    <div class="row">
+		        <span id="user_email"></span>
+	          <button type="button" id="signout">Log Out</button> <br>
+	    </div>
+	</div>
+<marquee style="color:red;font-size:35px">You can submit your responses between 9:00 P.M. to 10:00 P.M. only. </marquee>
+
+<div class="row">
+									<div class="col-md-11 square">
+										<center>
+												<a href="https://goo.gl/lFQULa" style="border:1px solid">Instructions</a>
+										</center>
+												<center>Typing Test</center>
+												<center>
+														<a href="typing.html" style="border:1px solid">Start</a>
+												</center>
+									</div>
+</div>
+
+
+<div class="row">
+					<div class="col-md-5 square">
+										<center>Excel Test </center>
+									  <center>
+												<a href="exceltest.html">
+														<span class="">Start</span>
+									  		</a>
+										</center>
+									  <center>
+											  <a href="https://goo.gl/ytMsB1">
+														<span class="">Submit</span>
+												</a>
+										</center>
+					</div>
+
+					<div class="col-md-5 square">
+									<center>PPT Test </center>
+									<center>
+											<a href="ppttest.html">
+													<span class="">Start</span>
+											</a>
+									<center>
+									<center>
+											<a href="https://goo.gl/ytMsB1">
+													<span class="">Submit</span>
+											</a>
+									</center>
+					</div>
+</div>
+
+
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

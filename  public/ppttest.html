@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Tier 4 PPT test</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./Diff/flipclock.css">
+	<script src="jquery.min.js"></script>
+	<script src="d3.v3.min.js" language="JavaScript"></script>
+	<script src="./Diff/flipclock.js"></script>
+	<script src="./Diff/diff.js"></script>
+
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+
+	<script src="bootstrap.min.js"></script>
+
+
+		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+
+		<!--<script src="app.js"></script>-->
+
+
+    <script src="liquidFillGauge.js" language="JavaScript"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+				.passage:hover
+				{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+				}
+				.passage{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					border-radius: 7px;
+					padding: 5px;
+					text-align: justify;
+					margin: 10px;
+ 					font-size:25px;
+					height: 115px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.practiceButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+				.practiceButton{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+					text-decoration: none;
+				}
+				.submitTestButton {
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					margin:30px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+				}
+
+				.submitTestButton:hover{
+					cursor: pointer;
+					color: #FFF;
+					background-color: #00BFA5;
+					text-decoration: none;
+				}
+
+
+				.showhideButton
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					margin-top:30px;
+					border-color: #00BFA5;
+					background-color: Transparent;
+					padding: 5px;
+				}
+
+				.showhideButton:hover
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					background-color: #00BFA5;
+					padding: 5px;
+				}
+
+				.starttypingtext
+				{
+			    font-family: 'Nunito', sans-serif;
+    			color: #000;
+					margin-top: 17px;
+    			font-size: 25px;
+    			display: inline-block;
+    			height: 100%;
+    			vertical-align: middle;
+				}
+				.submitTestButton:disabled{
+					font-family: 'Nunito', sans-serif;
+					color: #F44336;
+					border:1px solid;
+					font-size: 25px;
+					border-color: #F44336;
+					background-color: Transparent;
+					padding: 5px;
+				}
+			  #user_email{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					font-size: 25px;
+					padding: 15px;
+					display: inline-block;
+    			height: 100%;
+    			vertical-align: middle;
+				}
+				#signout{
+					float: right;
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					border:1px solid;
+					margin:10px;
+					font-size: 25px;
+					border-color: #FFF;
+					padding: 5px;
+					background-color: Transparent;
+				}
+
+				#signout:hover {
+					cursor: pointer;
+					color: #00BFA5;
+					background-color: #FFF;
+				}
+
+		    .loader {
+				  border: 16px solid #f3f3f3;
+				  border-radius: 50%;
+				  border-top: 16px solid #00BFA5;
+				  width: 100px;
+				  height: 100px;
+					margin: 0 auto;
+					margin-top: 200px;
+				  -webkit-animation: spin 2s linear infinite;
+				  animation: spin 2s linear infinite;
+				}
+				#b{
+					height:200px;
+				}
+
+				#schedule a
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #000;
+					font-size: 25px;
+					padding: 15px;
+					height: auto;
+					text-align: center;
+				}
+
+				#schedule a:hover
+				{
+					text-decoration: none;
+					color: #00BFA5;
+					cursor: pointer;
+				}
+
+
+				#inst a,#ins a
+				{
+					font-family: 'Nunito', sans-serif;
+					color:#00BFA5;
+					border:1px solid;
+					font-size: 25px;
+					height: auto;
+					text-decoration: none;
+					padding: 8px;
+					padding-left: 34px;
+					padding-right: 36px;
+				}
+				td#a
+				{
+					font-family: "Times New Roman", Georgia, Serif;
+				}
+
+				#inst a:hover, #ins a:hover
+				{
+					color: #FFF;
+					text-decoration: none;
+					background-color: #00BFA5;
+					cursor: pointer;
+				}
+
+				#softwarelink
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #000;
+					font-size: 25px;
+					padding: 15px;
+					height: auto;
+					text-align: center;
+				}
+				#softwarelink:hover
+				{
+					color: #00BFA5;
+					text-decoration: none;
+					cursor: pointer;
+				}
+				#previousButton
+				{
+					font-family: 'Nunito', sans-serif;
+    			border: 1px solid;
+    			margin: 10px;
+    			font-size: 25px;
+    			border-color: #FFF;
+    			padding: 10px;
+				}
+				.previousPageText
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #00BFA5;
+					border: 1px solid;
+					margin: 10px;
+					font-size: 25px;
+					padding: 10px;
+					background-color: Transparent;
+				}
+				.previousPageText:hover
+				{
+					font-family: 'Nunito', sans-serif;
+					color: #FFF;
+					cursor: pointer;
+					background-color: #00BFA5;
+				}
+
+
+				@-webkit-keyframes spin {
+				  0% { -webkit-transform: rotate(0deg); }
+				  100% { -webkit-transform: rotate(360deg); }
+				}
+
+				@keyframes spin {
+				  0% { transform: rotate(0deg); }
+				  100% { transform: rotate(360deg); }
+				}
+
+            .lst-kix_wdsiclanhl7p-8>li:before {
+                content: "\0025a0  "
+            }
+
+            ul.lst-kix_piovr1x9tbcm-3 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-1 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-4 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-0 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-1 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-2 {
+                list-style-type: none
+            }
+
+            .lst-kix_wdsiclanhl7p-6>li:before {
+                content: "\0025cf  "
+            }
+
+            ul.lst-kix_piovr1x9tbcm-7 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-2>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-2
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-5 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-8 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-4 {
+                list-style-type: none
+            }
+
+            .lst-kix_wdsiclanhl7p-7>li:before {
+                content: "\0025cb  "
+            }
+
+            ul.lst-kix_piovr1x9tbcm-5 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-3 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-2 {
+                list-style-type: none
+            }
+
+            .lst-kix_wdsiclanhl7p-4>li:before {
+                content: "\0025cb  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-0.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-0 0
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-8 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-7 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_xjuk8kcfoddd-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_piovr1x9tbcm-0 {
+                list-style-type: none
+            }
+
+            .lst-kix_wdsiclanhl7p-5>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_uh1v20kgxku1-3>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-3
+            }
+
+            .lst-kix_piovr1x9tbcm-3>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_piovr1x9tbcm-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_piovr1x9tbcm-4>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_7polgowv06gg-0>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_7polgowv06gg-3>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_piovr1x9tbcm-0>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_piovr1x9tbcm-8>li:before {
+                content: "\0025a0  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-3.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-3 0
+            }
+
+            .lst-kix_7polgowv06gg-1>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_piovr1x9tbcm-1>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_7polgowv06gg-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_piovr1x9tbcm-7>li:before {
+                content: "\0025cb  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-6.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-6 0
+            }
+
+            .lst-kix_piovr1x9tbcm-6>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_piovr1x9tbcm-5>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_sjidylf4uq2d-1>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_sjidylf4uq2d-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_sjidylf4uq2d-5>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_sjidylf4uq2d-3>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_sjidylf4uq2d-4>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_7polgowv06gg-7>li:before {
+                content: "\0025cb  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-3 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-2 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-5 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-4 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-5.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-5 0
+            }
+
+            ul.lst-kix_sjidylf4uq2d-8 {
+                list-style-type: none
+            }
+
+            .lst-kix_7polgowv06gg-4>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_7polgowv06gg-8>li:before {
+                content: "\0025a0  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-1 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-0 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_sjidylf4uq2d-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_sjidylf4uq2d-7 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_sjidylf4uq2d-4 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_sjidylf4uq2d-5 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_sjidylf4uq2d-2 {
+                list-style-type: none
+            }
+
+            .lst-kix_7polgowv06gg-5>li:before {
+                content: "\0025a0  "
+            }
+
+            ul.lst-kix_sjidylf4uq2d-3 {
+                list-style-type: none
+            }
+
+            .lst-kix_sjidylf4uq2d-0>li:before {
+                content: "\0025cf  "
+            }
+
+            ul.lst-kix_sjidylf4uq2d-0 {
+                list-style-type: none
+            }
+
+            .lst-kix_7polgowv06gg-6>li:before {
+                content: "\0025cf  "
+            }
+
+            ul.lst-kix_sjidylf4uq2d-1 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-4>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-4
+            }
+
+            .lst-kix_uh1v20kgxku1-1>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-1
+            }
+
+            .lst-kix_uh1v20kgxku1-7>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-7
+            }
+
+            ol.lst-kix_uh1v20kgxku1-4.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-4 0
+            }
+
+            .lst-kix_wdsiclanhl7p-0>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_wdsiclanhl7p-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_wdsiclanhl7p-3>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_sjidylf4uq2d-6>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_sjidylf4uq2d-7>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_wdsiclanhl7p-1>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_sjidylf4uq2d-8>li:before {
+                content: "\0025a0  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-7.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-7 0
+            }
+
+            ul.lst-kix_7polgowv06gg-1 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-0 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-3 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-2 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-5 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-4 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-7 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_7polgowv06gg-8 {
+                list-style-type: none
+            }
+
+            .lst-kix_xjuk8kcfoddd-0>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-1>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-4>li:before {
+                content: "\0025cb  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-7 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-6 {
+                list-style-type: none
+            }
+
+            .lst-kix_xjuk8kcfoddd-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-3>li:before {
+                content: "\0025cf  "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-8 {
+                list-style-type: none
+            }
+
+            .lst-kix_xjuk8kcfoddd-8>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-5>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-6>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_xjuk8kcfoddd-7>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_uh1v20kgxku1-8>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-8
+            }
+
+            .lst-kix_uh1v20kgxku1-5>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-5
+            }
+
+            ol.lst-kix_uh1v20kgxku1-2.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-2 0
+            }
+
+            ul.lst-kix_wdsiclanhl7p-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-5 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-0>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-0
+            }
+
+            ul.lst-kix_wdsiclanhl7p-4 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-3 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-6>li {
+                counter-increment: lst-ctn-kix_uh1v20kgxku1-6
+            }
+
+            ul.lst-kix_wdsiclanhl7p-8 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-7 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-2 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-1 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_wdsiclanhl7p-0 {
+                list-style-type: none
+            }
+
+            ol.lst-kix_uh1v20kgxku1-1.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-1 0
+            }
+
+            .lst-kix_uh1v20kgxku1-6>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-6,decimal) ". "
+            }
+
+            .lst-kix_uh1v20kgxku1-8>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-8,lower-roman) ". "
+            }
+
+            .lst-kix_l62nipbptpet-8>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_uh1v20kgxku1-5>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-5,lower-roman) ". "
+            }
+
+            .lst-kix_l62nipbptpet-6>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_l62nipbptpet-5>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_l62nipbptpet-7>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_uh1v20kgxku1-7>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-7,lower-latin) ". "
+            }
+
+            ol.lst-kix_uh1v20kgxku1-8.start {
+                counter-reset: lst-ctn-kix_uh1v20kgxku1-8 0
+            }
+
+            ul.lst-kix_l62nipbptpet-0 {
+                list-style-type: none
+            }
+
+            .lst-kix_l62nipbptpet-2>li:before {
+                content: "\0025a0  "
+            }
+
+            .lst-kix_l62nipbptpet-1>li:before {
+                content: "\0025cb  "
+            }
+
+            ul.lst-kix_l62nipbptpet-2 {
+                list-style-type: none
+            }
+
+            .lst-kix_l62nipbptpet-3>li:before {
+                content: "\0025cf  "
+            }
+
+            ul.lst-kix_l62nipbptpet-1 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-0>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-0,decimal) ". "
+            }
+
+            .lst-kix_l62nipbptpet-0>li:before {
+                content: "\0025cf  "
+            }
+
+            .lst-kix_l62nipbptpet-4>li:before {
+                content: "\0025cb  "
+            }
+
+            .lst-kix_uh1v20kgxku1-1>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-1,lower-latin) ". "
+            }
+
+            ul.lst-kix_l62nipbptpet-8 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_l62nipbptpet-7 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-2>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-2,lower-roman) ". "
+            }
+
+            .lst-kix_uh1v20kgxku1-4>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-4,lower-latin) ". "
+            }
+
+            ul.lst-kix_l62nipbptpet-4 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_l62nipbptpet-3 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_l62nipbptpet-6 {
+                list-style-type: none
+            }
+
+            ul.lst-kix_l62nipbptpet-5 {
+                list-style-type: none
+            }
+
+            .lst-kix_uh1v20kgxku1-3>li:before {
+                content: "" counter(lst-ctn-kix_uh1v20kgxku1-3,decimal) ". "
+            }
+
+            ol {
+                margin: 0;
+                padding: 0
+            }
+
+            table td,table th {
+                padding: 0
+            }
+
+            .c10 {
+                color: #000000;
+                font-weight: 400;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 12pt;
+                font-family: "Times New Roman";
+                font-style: normal
+            }
+
+            .c2 {
+                color: #000000;
+                font-weight: 400;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 14pt;
+                font-family: "Times New Roman";
+                font-style: normal
+            }
+
+            .c9 {
+                color: #000000;
+                font-weight: 400;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 11pt;
+                font-family: "Arial";
+                font-style: normal
+            }
+
+            .c3 {
+                color: #000000;
+                font-weight: 700;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 16pt;
+                font-family: "Times New Roman";
+                font-style: normal
+            }
+
+            .c0 {
+                padding-top: 0pt;
+                padding-bottom: 0pt;
+                line-height: 1.15;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            .c8 {
+                color: #000000;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 14pt;
+                font-family: "Times New Roman";
+                font-style: normal
+            }
+
+            .c7 {
+                color: #000000;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-size: 18pt;
+                font-family: "Times New Roman";
+                font-style: normal
+            }
+
+            .c14 {
+                font-size: 7pt;
+                font-family: "Times New Roman";
+                font-weight: 400
+            }
+
+            .c13 {
+                background-color: #ffffff;
+                max-width: 468pt;
+                padding: 72pt 72pt 72pt 72pt
+            }
+
+            .c15 {
+                margin-left: 360pt;
+                text-indent: 36pt
+            }
+
+            .c11 {
+                font-size: 18pt;
+                font-family: "Times New Roman"
+            }
+
+            .c6 {
+                padding: 0;
+                margin: 0
+            }
+
+            .c5 {
+                margin-left: 36pt;
+                padding-left: 0pt
+            }
+
+            .c12 {
+                font-size: 16pt;
+                font-family: "Times New Roman"
+            }
+
+            .c4 {
+                font-weight: 700
+            }
+
+            .c1 {
+                height: 11pt
+            }
+
+            .title {
+                padding-top: 0pt;
+                color: #000000;
+                font-size: 26pt;
+                padding-bottom: 3pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            .subtitle {
+                padding-top: 0pt;
+                color: #666666;
+                font-size: 15pt;
+                padding-bottom: 16pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            li {
+                color: #000000;
+                font-size: 11pt;
+                font-family: "Arial"
+            }
+
+            p {
+                margin: 0;
+                color: #000000;
+                font-size: 11pt;
+                font-family: "Arial"
+            }
+
+            h1 {
+                padding-top: 20pt;
+                color: #000000;
+                font-size: 20pt;
+                padding-bottom: 6pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            h2 {
+                padding-top: 18pt;
+                color: #000000;
+                font-size: 16pt;
+                padding-bottom: 6pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            h3 {
+                padding-top: 16pt;
+                color: #434343;
+                font-size: 14pt;
+                padding-bottom: 4pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            h4 {
+                padding-top: 14pt;
+                color: #666666;
+                font-size: 12pt;
+                padding-bottom: 4pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            h5 {
+                padding-top: 12pt;
+                color: #666666;
+                font-size: 11pt;
+                padding-bottom: 4pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+
+            h6 {
+                padding-top: 12pt;
+                color: #666666;
+                font-size: 11pt;
+                padding-bottom: 4pt;
+                font-family: "Arial";
+                line-height: 1.15;
+                page-break-after: avoid;
+                font-style: italic;
+                orphans: 2;
+                widows: 2;
+                text-align: left
+            }
+    </style>
+</head>
+<body>
+				<div class="container" style="background-color:#00BFA5;font-family: 'Nunito', sans-serif;width:100%; margin:autoStart">
+					    <div class="row">
+					          <span id="user_email"></span>
+					          <button type="button" id="signout">Log Out</button> <br>
+					    </div>
+				</div>
+				<marquee style="color:red;font-size:35px">You can submit your responses between 9:00 P.M. to 10:00 P.M. only. </marquee>
+				<div id="practice" style="width:100%" >
+									<div style="margin:20px">
+											<div class="clock" style="margin:2em; display:table;width:0;margin:0 auto"></div>
+									</div>
+									<div class="row" style="padding-bottom:26px;max-width:100%">
+												<div class="col-md-12">
+																<center><button class="submitTestButton" id="submitTest" disabled="true">Finish</button></center>
+											  </div>
+
+									</div>
+				</div>
+				<div class="c13" style="margin:0 auto">
+					<p class="c0">
+							<span class="c4 c11">Question : Create the following Presentation</span>
+					</p>
+					<p class="c0">
+							<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 683.23px; height: 627.50px;">
+									<img alt="" src="images/image00.png" style="width: 683.23px; height: 627.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+							</span>
+					</p>
+					<p class="c0">
+							<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 685.61px; height: 517.50px;">
+									<img alt="" src="images/image01.png" style="width: 685.61px; height: 517.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+							</span>
+					</p>
+					<p class="c0 c1">
+							<span class="c9"></span>
+					</p>
+					<p class="c0">
+							<span class="c3">Instructions:</span>
+					</p>
+					<p class="c0">
+							<span class="c4 c12">&nbsp;</span>
+							<span class="c2">Make a presentation like the above shown presentation with 2 slides. Follow the below mentioned instructions for the same.</span>
+					</p>
+					<p class="c0 c1">
+							<span class="c2"></span>
+					</p>
+					<p class="c0">
+							<span class="c3">Instructions for Slide 1:</span>
+					</p>
+					<p class="c0">
+							<span class="c3">Heading:</span>
+					</p>
+					<p class="c0">
+							<span class="c3">&nbsp;</span>
+					</p>
+					<ul class="c6 lst-kix_wdsiclanhl7p-0 start">
+							<li class="c0 c5">
+									<span class="c2">Font style: Calibri (Headings)</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Bold, Underline and Center aligned.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Font size: 32</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Color black</span>
+							</li>
+					</ul>
+					<p class="c0">
+							<span class="c3">&nbsp;</span>
+					</p>
+					<p class="c0">
+							<span class="c3">Content:</span>
+					</p>
+					<p class="c0">
+							<span class="c9">&nbsp;</span>
+					</p>
+					<ul class="c6 lst-kix_sjidylf4uq2d-0 start">
+							<li class="c0 c5">
+									<span class="c2">Set font style &nbsp;&ldquo;Calibri (Body)&rdquo;, justified font and font size as &ldquo;18 &rdquo;for content text.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Color of the text would be black except at few places it should be red as shown in the above slide.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Each bullet style and Numbering style must be same as shown in the above slide.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Fill the background color &nbsp;of the text block with the same colour as shown in the &nbsp;above slide (Colour : Blue, Accent 1, Lighter 80%).</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Set &ldquo;Shape Diamond &rdquo;Animation for animation effect.</span>
+							</li>
+					</ul>
+					<p class="c0">
+							<span class="c10">&nbsp;</span>
+					</p>
+					<p class="c0">
+							<span class="c3">Footer:</span>
+					</p>
+					<ul class="c6 lst-kix_l62nipbptpet-0 start">
+							<li class="c0 c5">
+									<span class="c14">&nbsp;</span>
+									<span class="c2">Add date &amp;time, &nbsp;Your SSC Roll No and &nbsp;Your Name.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Font &ndash;&ldquo;Rockwell &rdquo;, Font Size &ndash;16.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Set &ldquo;Black &rdquo;colour.</span>
+							</li>
+					</ul>
+					<p class="c0 c1">
+							<span class="c10"></span>
+					</p>
+					<p class="c0 c1">
+							<span class="c10"></span>
+					</p>
+					<p class="c0">
+							<span class="c3">Instructions for Slide 2:</span>
+					</p>
+					<p class="c0">
+							<span class="c3">Heading:</span>
+					</p>
+					<p class="c0">
+							<span class="c3">&nbsp;</span>
+					</p>
+					<ul class="c6 lst-kix_7polgowv06gg-0 start">
+							<li class="c0 c5">
+									<span class="c2">Font style: Calibri (Headings)</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Bold, underline and center aligned.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Font size: 28</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Color black</span>
+							</li>
+					</ul>
+					<p class="c0">
+							<span class="c3">&nbsp;</span>
+					</p>
+					<p class="c0">
+							<span class="c3">Content:</span>
+					</p>
+					<p class="c0">
+							<span class="c9">&nbsp;</span>
+					</p>
+					<ul class="c6 lst-kix_xjuk8kcfoddd-0 start">
+							<li class="c0 c5">
+									<span class="c2">Insert a &ldquo;Block Cycle &rdquo;flow chart and insert text as shown in the above slide.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Set &nbsp;font style as &ldquo;Calibri (Body)&rdquo;, center aligned &nbsp;and font size as &ldquo;14 &rdquo;for each text.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Set &ldquo;Shape Diamond &rdquo;Animation for transition effect.</span>
+							</li>
+					</ul>
+					<p class="c0">
+							<span class="c3">Footer:</span>
+					</p>
+					<ul class="c6 lst-kix_piovr1x9tbcm-0 start">
+							<li class="c0 c5">
+									<span class="c2">Add date &amp;time, Your &nbsp;SSC Roll No and &nbsp;Your Name</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">&nbsp;Font &ndash;&ldquo;Rockwell &rdquo;, Font Size &ndash;16.</span>
+							</li>
+							<li class="c0 c5">
+									<span class="c2">Set &ldquo;Black &rdquo;colour.</span>
+							</li>
+					</ul>
+					<p class="c0 c1">
+							<span class="c10"></span>
+					</p>
+					<p class="c0">
+							<span class="c4 c8">Save your slide with your name.</span>
+					</p>
+					<p class="c0 c1">
+							<span class="c9"></span>
+					</p>
+				</div>
+
+
+
+
+
+		<script src="config.js"></script>
+    <script src="common.js"></script>
+		<script src="pptexcel.js"></script>
+</body>
+</html>
